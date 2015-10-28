@@ -1,0 +1,131 @@
+setwd("C:/Users/Goudi/Desktop")
+hiv <- read.csv("indicator hiv estimated prevalence% 15-49.csv")
+library(dplyr)
+library(ggplot2)
+glimpse(hiv)
+names(hiv)
+
+# # # # # # # # # # # #
+hiv_1 <- sample_n(hiv, 50)
+hiv_2 <- select(hiv_1, Estimated_HIV_Prevalence:X1986)
+hiv_3 <- select(hiv_1,Estimated_HIV_Prevalence, X1987:X1991 )
+hiv_4 <- select(hiv_1,Estimated_HIV_Prevalence, X1992:X2000 ) 
+hiv_5 <- select(hiv_1,Estimated_HIV_Prevalence, X2001:X2011 ) 
+# # # # # # # # # # # #
+hiv_2a <- subset(hiv_2, !is.na(X1979))
+hiv_2b <- subset(hiv_2, !is.na(X1980))
+hiv_2c <- subset(hiv_2, !is.na(X1981))
+hiv_2d <- subset(hiv_2, !is.na(X1982))
+hiv_2e <- subset(hiv_2, !is.na(X1983))
+hiv_2f <- subset(hiv_2, !is.na(X1984))
+hiv_2g <- subset(hiv_2, !is.na(X1985))
+hiv_2h <- subset(hiv_2, !is.na(X1986))
+# # # # # # # # # # # #
+hiv_3a <- subset(hiv_3, !is.na(X1987))
+hiv_3b <- subset(hiv_3, !is.na(X1988))
+hiv_3c <- subset(hiv_3, !is.na(X1989))
+hiv_3d <- subset(hiv_3, !is.na(X1990))
+hiv_3e <- subset(hiv_3, !is.na(X1991))
+# # # # # # # # # # # #
+hiv_4a <- subset(hiv_4, !is.na(X1992))
+hiv_4b <- subset(hiv_4, !is.na(X1993))
+hiv_4c <- subset(hiv_4, !is.na(X1994))
+hiv_4d <- subset(hiv_4, !is.na(X1995))
+hiv_4e <- subset(hiv_4, !is.na(X1996))
+hiv_4f <- subset(hiv_4, !is.na(X1997))
+hiv_4g <- subset(hiv_4, !is.na(X1998))
+hiv_4h <- subset(hiv_4, !is.na(X1999))
+hiv_4i <- subset(hiv_4, !is.na(X2000))
+# # # # # # # # # # # #
+hiv_5a <- subset(hiv_5, !is.na(X2001))
+hiv_5b <- subset(hiv_5, !is.na(X2002))
+hiv_5c <- subset(hiv_5, !is.na(X2003))
+hiv_5d <- subset(hiv_5, !is.na(X2004))
+hiv_5e <- subset(hiv_5, !is.na(X2005))
+hiv_5f <- subset(hiv_5, !is.na(X2006))
+hiv_5g <- subset(hiv_5, !is.na(X2007))
+hiv_5h <- subset(hiv_5, !is.na(X2008))
+hiv_5i <- subset(hiv_5, !is.na(X2009))
+hiv_5j <- subset(hiv_5, !is.na(X2010))
+hiv_5k <- subset(hiv_5, !is.na(X2011))
+# # # # # # # # # # # #
+hiv_2ap <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X1979), data = hiv_2a) + xlab ("Sampled Countries with Recorded Values in 1979") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3) + scale_y_continuous(limit= c(0,0.1), breaks = seq(0, 0.10, 0.01))
+
+ggplot(aes(x = Estimated_HIV_Prevalence, y = X1980), data = hiv_2b) + xlab ("Sampled Countries with Recorded Values in 1980") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3) + scale_y_continuous(limit= c(0,0.1))
+
+ggplot(aes(x = Estimated_HIV_Prevalence, y = X1981), data = hiv_2c) + xlab ("Sampled Countries with Recorded Values in 1981") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3) + scale_y_continuous(limit= c(0,0.1))
+
+ggplot(aes(x = Estimated_HIV_Prevalence, y = X1982), data = hiv_2d) + xlab ("Sampled Countries with Recorded Values in 1982") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3) + scale_y_continuous(limit= c(0,0.1))
+
+ggplot(aes(x = Estimated_HIV_Prevalence, y = X1983), data = hiv_2e) + xlab ("Sampled Countries with Recorded Values in 1983") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3) + scale_y_continuous(limit= c(0,0.1))
+
+ggplot(aes(x = Estimated_HIV_Prevalence, y = X1984), data = hiv_2f) + xlab ("Sampled Countries with Recorded Values in 1984") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3) + scale_y_continuous(limit= c(0,0.1))
+
+ggplot(aes(x = Estimated_HIV_Prevalence, y = X1985), data = hiv_2g) + xlab ("Sampled Countries with Recorded Values in 1985") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3) + scale_y_continuous(limit= c(0,0.1))
+
+ggplot(aes(x = Estimated_HIV_Prevalence, y = X1986), data = hiv_2h) + xlab ("Sampled Countries with Recorded Values in 1986") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3) + scale_y_continuous(limit= c(0,0.1))
+# # # # # # # # # # # #
+hiv_3dp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X1990), data = hiv_3d) + xlab ("Sampled Countries with Recorded Values in 1990") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3) + scale_y_continuous(limit = c(0, 15), breaks = seq(0, 15, 1))
+
+hiv_3ep <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X1991), data = hiv_3e) + xlab ("Sampled Countries with Recorded Values in 1991") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3) + scale_y_continuous(limit = c(0, 15), breaks = seq(0, 15, 1))
+grid.arrange(hiv_2ap, hiv_3dp, hiv_3ep, ncol = 1)
+
+# # # # # # # # # # # #
+hiv_4ap <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X1992), data = hiv_4a) + xlab ("Sampled Countries with Recorded Values in 1992") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 20), breaks = seq(0, 20, 1))
+
+hiv_4bp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X1993), data = hiv_4b) + xlab ("Sampled Countries with Recorded Values in 1993") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 21), breaks = seq(0, 21, 1))
+
+hiv_4cp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X1994), data = hiv_4c) + xlab ("Sampled Countries with Recorded Values in 1994") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 25), breaks = seq(0, 25, 1))
+
+hiv_4dp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X1995), data = hiv_4d) + xlab ("Sampled Countries with Recorded Values in 1995") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 27), breaks = seq(0, 27, 1))
+
+hiv_4ep <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X1996), data = hiv_4e) + xlab ("Sampled Countries with Recorded Values in 1996") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 27), breaks = seq(0, 27, 1))
+
+hiv_4fp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X1997), data = hiv_4f) + xlab ("Sampled Countries with Recorded Values in 1997") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 27), breaks = seq(0, 27, 1))
+
+hiv_4gp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X1998), data = hiv_4g) + xlab ("Sampled Countries with Recorded Values in 1998") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 27), breaks = seq(0, 27, 1))
+
+hiv_4hp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X1999), data = hiv_4h) + xlab ("Sampled Countries with Recorded Values in 1999") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 27), breaks = seq(0, 27, 1))
+
+hiv_4ip <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X2000), data = hiv_4i) + xlab ("Sampled Countries with Recorded Values in 2000") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 25), breaks = seq(0, 25, 1))
+
+grid.arrange(hiv_4ap, hiv_4bp, ncol = 1)
+
+grid.arrange(hiv_4cp, hiv_4dp, ncol = 1)
+
+grid.arrange(hiv_4ep, hiv_4fp, ncol = 1)
+
+grid.arrange(hiv_4gp, hiv_4hp, ncol = 1)
+
+grid.arrange(hiv_4ip, hiv_5ap, ncol = 1)
+# # # # # # # # # # # #
+hiv_5ap <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X2001), data = hiv_5a) + xlab ("Sampled Countries with Recorded Values in 2001") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 25), breaks = seq(0, 25, 1))
+
+hiv_5bp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X2002), data = hiv_5b) + xlab ("Sampled Countries with Recorded Values in 2002") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 25), breaks = seq(0, 25, 1))
+
+hiv_5cp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X2003), data = hiv_5c) + xlab ("Sampled Countries with Recorded Values in 2003") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 25), breaks = seq(0, 25, 1))
+
+hiv_5dp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X2004), data = hiv_5d) + xlab ("Sampled Countries with Recorded Values in 2004") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 25), breaks = seq(0, 25, 1))
+
+hiv_5ep <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X2005), data = hiv_5e) + xlab ("Sampled Countries with Recorded Values in 2005") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 25), breaks = seq(0, 25, 1))
+
+hiv_5fp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X2006), data = hiv_5f) + xlab ("Sampled Countries with Recorded Values in 2006") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 25), breaks = seq(0, 25, 1))
+
+hiv_5gp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X2007), data = hiv_5g) + xlab ("Sampled Countries with Recorded Values in 2007") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 25), breaks = seq(0, 25, 1))
+
+hiv_5hp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X2008), data = hiv_5h) + xlab ("Sampled Countries with Recorded Values in 2008") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 25), breaks = seq(0, 25, 1))
+
+hiv_5ip <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X2009), data = hiv_5i) + xlab ("Sampled Countries with Recorded Values in 2009") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 25), breaks = seq(0, 25, 1))
+
+hiv_5jp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X2010), data = hiv_5j) + xlab ("Sampled Countries with Recorded Values in 2010") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 25), breaks = seq(0, 25, 1))
+
+hiv_5kp <- ggplot(aes(x = Estimated_HIV_Prevalence, y = X2011), data = hiv_5k) + xlab ("Sampled Countries with Recorded Values in 2011") + ylab ("Estimated HIV Prevelence rate (%)")+ geom_point(color = "red", size = 3)+ scale_y_continuous(limit = c(0, 25), breaks = seq(0, 25, 1))
+
+grid.arrange(hiv_5bp, hiv_5cp, ncol = 1)
+grid.arrange(hiv_5dp, hiv_5ep, ncol = 1)
+grid.arrange(hiv_5fp, hiv_5gp, ncol = 1)
+grid.arrange(hiv_5hp, hiv_5ip, ncol = 1)
+grid.arrange(hiv_5jp, hiv_5kp, ncol = 1)
+# # # # # # # # # # # #
+
+
